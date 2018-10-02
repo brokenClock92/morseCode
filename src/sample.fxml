@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.control.Label?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: rgba(0,0,0,0.55)" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
 
-    <Button fx:id="translateButton" alignment="CENTER" contentDisplay="TOP" layoutX="333.0" layoutY="36.0" mnemonicParsing="false"
-            prefHeight="40.0" prefWidth="134.0" text="Translate" />
-    <TextArea fx:id="textBoxLeft" layoutX="14.0" layoutY="14.0" prefHeight="300.0" prefWidth="300.0" />
-    <TextArea fx:id="textBoxRight" layoutX="486.0" layoutY="14.0" prefHeight="300.0" prefWidth="300.0" />
+    <Button fx:id="toMorseCode" alignment="CENTER" contentDisplay="TOP" layoutX="333.0" layoutY="93.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="134.0" text="To Morse Code" />
+    <Button fx:id="toLetters" alignment="CENTER" contentDisplay="TOP" layoutX="333.0" layoutY="269.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="134.0" text="To scripture" />
+
+    <Label fx:id="labelInput" layoutX="20.0" layoutY="14.0" prefHeight="31.0" prefWidth="300.0" style="-fx-font-size: 1.35em; -fx-font-weight: bold" text="Input" />
+    <TextArea fx:id="textBoxLeft" layoutX="14.0" layoutY="53.0" prefHeight="300.0" prefWidth="300.0" style="-fx-font-size: 1.5em; -fx-wrap-text: true" />
+
+    <Label fx:id="labelOutput" layoutX="492.0" layoutY="14.0" prefHeight="31.0" prefWidth="300.0" style="-fx-font-size: 1.35em; -fx-font-weight: bold" text="Output" />
+    <TextArea fx:id="textBoxRight" layoutX="486.0" layoutY="53.0" prefHeight="300.0" prefWidth="300.0" style="-fx-font-size: 1.5em; -fx-wrap-text: true; -fx-control-inner-background:rgba(255,172,0,0.68); -fx-background-color: orange" />
     
 </AnchorPane>
