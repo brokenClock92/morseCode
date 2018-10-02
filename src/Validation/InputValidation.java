@@ -21,9 +21,10 @@ public class InputValidation {
             System.out.println(characterIsInTheTable);
             if(!characterIsInTheTable) {
                 result = false;
-                alertDialog();
             }
         }
+        if(!result)
+            alertDialog();
         return result;
     }
 
@@ -31,7 +32,7 @@ public class InputValidation {
         Alert alertDialog = new Alert(Alert.AlertType.INFORMATION);
         alertDialog.setTitle("Information");
         alertDialog.setHeaderText(null);
-        alertDialog.setContentText("Your input contains illegal symbol, please check your sentence.");
+        alertDialog.setContentText("Your input contains prohibited symbol, please check your sentence.");
 
         alertDialog.showAndWait();
     }
