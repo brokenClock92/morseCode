@@ -1,17 +1,17 @@
 package sample.Validation;
 
 import javafx.scene.control.Alert;
-import sample.Base.SymbolsMorse;
+import sample.Base.SymbolMorseAndLetters;
 
 public class InputValidation {
 
-    private SymbolsMorse symbolsMorse = new SymbolsMorse();
+    private SymbolMorseAndLetters symbolMorseAndLetters = new SymbolMorseAndLetters();
 
     public boolean validateTextToMorseCode(String yourText){
         boolean[] characterIsOk = new boolean[yourText.length()];
         boolean result = true;
         for(int i = 0; i < yourText.length(); i++){
-            for (char characters : symbolsMorse.getSymbolsTableLetters()) {
+            for (char characters : symbolMorseAndLetters.getSymbolsTableLetters()) {
                 if (String.valueOf(yourText.charAt(i)).equals(String.valueOf(characters)))
                     characterIsOk[i] = true;
             }

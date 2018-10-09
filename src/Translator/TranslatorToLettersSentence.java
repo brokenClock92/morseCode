@@ -1,6 +1,6 @@
 package sample.Translator;
 
-import sample.Base.SymbolsMorse;
+import sample.Base.SymbolMorseAndLetters;
 import sample.Validation.InputValidation;
 
 public class TranslatorToLettersSentence {
@@ -9,13 +9,14 @@ public class TranslatorToLettersSentence {
     private char[] charactersTable;
     private String[] morseCodeTable;
     private InputValidation validation;
+    private boolean labelVisible;
 
     public TranslatorToLettersSentence(String yourText){
         this.yourText = yourText;
-        SymbolsMorse symbolsMorse = new SymbolsMorse();
+        SymbolMorseAndLetters symbolMorseAndLetters = new SymbolMorseAndLetters();
         validation = new InputValidation();
-        charactersTable = symbolsMorse.getSymbolsTableLetters();
-        morseCodeTable = symbolsMorse.getSymbolsTableMorse();
+        charactersTable = symbolMorseAndLetters.getSymbolsTableLetters();
+        morseCodeTable = symbolMorseAndLetters.getSymbolsTableMorse();
         setYourText(fromMorseToLetters(getYourText()));
     }
 
@@ -34,7 +35,7 @@ public class TranslatorToLettersSentence {
 
         for (int i = 0; i < text.length(); i++) {
             //Morse symbols separator
-            if ("/".equals(String.valueOf(text.charAt(i)))) {
+            if ("/".equals(String.valueOf(text.charAt(i))) || " ".equals(String.valueOf(text.charAt(i)))) {
                 if((i+1) < text.length()){
                     if ("/".equals(String.valueOf(text.charAt(i + 1)))) {
                         symbolIndex++;
@@ -70,9 +71,13 @@ public class TranslatorToLettersSentence {
             stringBuilder.append(character);
         text = stringBuilder.toString();
         if(text.contains("#")){
+            labelVisible = true;
             validation.alertDialog();
             text = "Warning!\nYou used prohibited character,\nplease check your sentence.";
+        } else {
+            labelVisible = false;
         }
+        setLabelIsVisible(labelVisible);
         return text;
     }
 
@@ -82,5 +87,13 @@ public class TranslatorToLettersSentence {
 
     private void setYourText(String text){
         this.yourText = text;
+    }
+
+    public boolean getLabelIsVisible(){
+        return labelVisible;
+    }
+
+    private void setLabelIsVisible(boolean isVisible){
+        this.labelVisible = isVisible;
     }
 }

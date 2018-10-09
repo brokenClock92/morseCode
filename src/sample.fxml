@@ -7,15 +7,17 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: rgba(0,0,0,0.55)" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
 
-    <Button fx:id="toMorseCode" alignment="CENTER" contentDisplay="TOP" layoutX="333.0" layoutY="93.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="134.0" text="To Morse Code" />
-    <Button fx:id="toLetters" alignment="CENTER" contentDisplay="TOP" layoutX="333.0" layoutY="269.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="134.0" text="To scripture" />
+    <Button fx:id="toMorseCode" alignment="CENTER" contentDisplay="TOP" layoutX="333.0" layoutY="152.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="134.0" style="-fx-font-size: 1.2em; -fx-font-weight: bold" text="To Morse code" />
+    <Button fx:id="toLetters" alignment="CENTER" contentDisplay="TOP" layoutX="333.0" layoutY="214.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="134.0" style="-fx-font-size: 1.2em; -fx-font-weight: bold" text="To Scripture" />
+    <Button fx:id="soundMorseCode" alignment="CENTER" contentDisplay="TOP" layoutX="486.0" layoutY="370.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="134.0" style="-fx-font-size: 1.1em; -fx-font-weight: bold;" text="Sound Morse Code" />
 
     <Label fx:id="labelInput" layoutX="20.0" layoutY="14.0" prefHeight="31.0" prefWidth="300.0" style="-fx-font-size: 1.35em; -fx-font-weight: bold" text="Input" />
-    <TextArea fx:id="textBoxLeft" layoutX="14.0" layoutY="53.0" prefHeight="300.0" prefWidth="300.0" promptText="pass your sentence here"
-              style="-fx-font-size: 1.5em; -fx-wrap-text: true" />
+    <TextArea fx:id="textBoxLeft" layoutX="14.0" layoutY="53.0" prefHeight="300.0" prefWidth="300.0" promptText="pass your sentence here" style="-fx-font-size: 1.5em; -fx-wrap-text: true" />
 
     <Label fx:id="labelOutput" layoutX="492.0" layoutY="14.0" prefHeight="31.0" prefWidth="300.0" style="-fx-font-size: 1.35em; -fx-font-weight: bold" text="Output" />
-    <TextArea fx:id="textBoxRight" layoutX="486.0" layoutY="53.0" prefHeight="300.0" prefWidth="300.0" promptText="your result"
-              style="-fx-font-size: 1.5em; -fx-wrap-text: true; -fx-control-inner-background:rgba(255,172,0,0.68); -fx-background-color: orange" />
-    
+    <TextArea fx:id="textBoxRight" layoutX="486.0" layoutY="53.0" prefHeight="300.0" prefWidth="300.0" promptText="your result" style="-fx-font-size: 1.5em; -fx-wrap-text: true; -fx-control-inner-background:rgba(255,172,0,0.68); -fx-background-color: orange" />
+
+    <Label fx:id="labelWarning" layoutX="20.0" layoutY="480.0" prefHeight="17.0" prefWidth="91.0" style="-fx-font-size: 1.35em; -fx-font-weight: bold" text="WARNING!" visible="false" />
+    <Label fx:id="contentWarning" layoutX="20.0" layoutY="505.0" prefHeight="80.0" prefWidth="604.0" style="-fx-font-size: 1.25em" wrapText="true" />
+
 </AnchorPane>
